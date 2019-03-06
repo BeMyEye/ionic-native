@@ -25,6 +25,8 @@ export interface CameraPreviewOptions {
   /** Choose the camera to use 'front' or 'rear', default 'front' */
   camera?: string;
 
+  pictureFormat?: CameraPreviewDimensions;
+
   /** Tap to take a photo, default true (picture quality by default : 85) */
   tapPhoto?: boolean;
 
@@ -45,10 +47,6 @@ export interface CameraPreviewOptions {
 }
 
 export interface CameraPreviewPictureOptions {
-  /** The width in pixels, default 0 */
-  width?: number;
-  /** The height in pixels, default 0 */
-  height?: number;
   /** The picture quality, 0 - 100, default 85 */
   quality?: number;
 }
@@ -80,7 +78,7 @@ export interface CameraPreviewPictureOptions {
  *   previewDrag: true,
  *   toBack: true,
  *   alpha: 1
- * }
+ * };
  *
  * // start camera
  * this.cameraPreview.startCamera(cameraPreviewOpts).then(
@@ -100,8 +98,6 @@ export interface CameraPreviewPictureOptions {
  *
  * // picture options
  * const pictureOpts: CameraPreviewPictureOptions = {
- *   width: 1280,
- *   height: 1280,
  *   quality: 85
  * }
  *
@@ -294,7 +290,7 @@ export class CameraPreview extends IonicNativePlugin {
   }
 
   /**
-   * Set the preview Size
+   * Set the size of pictures
    * @param {CameraPreviewDimensions} [dimensions]
    * @return {Promise<any>}
    */
@@ -302,7 +298,7 @@ export class CameraPreview extends IonicNativePlugin {
     successIndex: 1,
     errorIndex: 2
   })
-  setPreviewSize(dimensions?: CameraPreviewDimensions): Promise<any> {
+  setPictureSize(dimensions?: CameraPreviewDimensions): Promise<any> {
     return;
   }
 
@@ -370,10 +366,10 @@ export class CameraPreview extends IonicNativePlugin {
 
   /**
    * Get supported picture sizes
-   * @return {Promise<any>}
+   * @return {Promise<CameraPreviewDimensions[]>}
    */
   @Cordova()
-  getSupportedPictureSizes(): Promise<any> {
+  getSupportedPictureSizes(): Promise<CameraPreviewDimensions[]> {
     return;
   }
 
@@ -436,6 +432,19 @@ export class CameraPreview extends IonicNativePlugin {
    */
   @Cordova()
   getExposureCompensationRange(): Promise<any> {
+    return;
+  }
+
+  /**
+   * Set screen rotation
+   * @param {number} [screenRotation]
+   * @return {Promise<void>}
+   */
+  @Cordova({
+    successIndex: 1,
+    errorIndex: 2
+  })
+  setScreenRotation(screenRotation?: number): Promise<void> {
     return;
   }
 
