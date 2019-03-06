@@ -1033,15 +1033,6 @@ export class GoogleMaps extends IonicNativePlugin {
     return googleMap;
   }
 
-  /**
-   * @deprecation
-   * @hidden
-   */
-  create(element: string | HTMLElement | GoogleMapOptions, options?: GoogleMapOptions): GoogleMap {
-    console.error('GoogleMaps', '[deprecated] Please use GoogleMaps.create()');
-    return GoogleMaps.create(element, options);
-  }
-
 }
 
 /**
@@ -1566,29 +1557,11 @@ export class Environment {
   }
 
   /**
-   * @deprecation
-   * @hidden
-   */
-  getLicenseInfo(): Promise<any> {
-    console.error('GoogleMaps', '[deprecated] This method is static. Please use Environment.getLicenseInfo()');
-    return Environment.getLicenseInfo();
-  }
-
-  /**
    * Specifies the background color of the app.
    * @param color
    */
   static setBackgroundColor(color: string): void {
     GoogleMaps.getPlugin().environment.setBackgroundColor(color);
-  }
-
-  /**
-   * @deprecation
-   * @hidden
-   */
-  setBackgroundColor(color: string): void {
-    console.error('GoogleMaps', '[deprecated] This method is static. Please use Environment.setBackgroundColor()');
-    Environment.setBackgroundColor(color);
   }
 }
 
@@ -1602,15 +1575,6 @@ export class Environment {
   repo: ''
 })
 export class Geocoder {
-
-  /**
-   * @deprecation
-   * @hidden
-   */
-  geocode(request: GeocoderRequest): Promise<GeocoderResult[] | BaseArrayClass<GeocoderResult>> {
-    console.error('GoogleMaps', '[deprecated] This method is static. Please use Geocoder.geocode()');
-    return Geocoder.geocode(request);
-  }
 
   /**
    * Converts position to address and vice versa
@@ -1691,24 +1655,6 @@ export class LocationService {
 export class Encoding {
 
   /**
-   * @deprecation
-   * @hidden
-   */
-  decodePath(encoded: string, precision?: number): ILatLng[] {
-    console.error('GoogleMaps', '[deprecated] This method is static. Please use Encoding.decodePath()');
-    return Encoding.decodePath(encoded, precision);
-  }
-
-  /**
-   * @deprecation
-   * @hidden
-   */
-  encodePath(path: ILatLng[] | BaseArrayClass<ILatLng>): string {
-    console.error('GoogleMaps', '[deprecated] This method is static. Please use Encoding.encodePath()');
-    return Encoding.encodePath(path);
-  }
-
-  /**
    * Decodes an encoded path string into a sequence of LatLngs.
    * @param encoded {string} an encoded path string
    * @param precision? {number} default: 5
@@ -1770,84 +1716,6 @@ export class Poly {
   repo: ''
 })
 export class Spherical {
-
-  /**
-   * @deprecation
-   * @hidden
-   */
-  computeDistanceBetween(from: ILatLng, to: ILatLng): number {
-    console.error('GoogleMaps', '[deprecated] This method is static. Please use Spherical.computeDistanceBetween()');
-    return Spherical.computeDistanceBetween(from, to);
-  }
-
-  /**
-   * @deprecation
-   * @hidden
-   */
-  computeOffset(from: ILatLng, distance: number, heading: number): LatLng {
-    console.error('GoogleMaps', '[deprecated] This method is static. Please use Spherical.computeOffset()');
-    return Spherical.computeOffset(from, distance, heading);
-  }
-
-  /**
-   * @deprecation
-   * @hidden
-   */
-  computeOffsetOrigin(to: ILatLng, distance: number, heading: number): LatLng {
-    console.error('GoogleMaps', '[deprecated] This method is static. Please use Spherical.computeOffsetOrigin()');
-    return Spherical.computeOffsetOrigin(to, distance, heading);
-  }
-
-  /**
-   * @deprecation
-   * @hidden
-   */
-  computeLength(path: ILatLng[] | BaseArrayClass<ILatLng>): number {
-    console.error('GoogleMaps', '[deprecated] This method is static. Please use Spherical.computeLength()');
-    return Spherical.computeLength(path);
-  }
-
-  /**
-   * @deprecation
-   * @hidden
-   */
-  computeArea(path: ILatLng[] | BaseArrayClass<ILatLng>): number {
-    console.error('GoogleMaps', '[deprecated] This method is static. Please use Spherical.computeArea()');
-    return Spherical.computeArea(path);
-  }
-
-  /**
-   * @deprecation
-   * @hidden
-   */
-  computeSignedArea(path: ILatLng[] | BaseArrayClass<ILatLng>): number {
-    console.error('GoogleMaps', '[deprecated] This method is static. Please use Spherical.computeSignedArea()');
-    return Spherical.computeSignedArea(path);
-  }
-
-  /**
-   * @deprecation
-   * @hidden
-   */
-  computeHeading(from: ILatLng, to: ILatLng): number {
-    console.error('GoogleMaps', '[deprecated] This method is static. Please use Spherical.computeHeading()');
-    return Spherical.computeHeading(from, to);
-  }
-
-  /**
-   * @deprecation
-   * @hidden
-   */
-  interpolate(from: ILatLng, to: ILatLng, fraction: number): LatLng {
-    console.error('GoogleMaps', '[deprecated] This method is static. Please use Spherical.interpolate()');
-    return Spherical.interpolate(from, to, fraction);
-  }
-
-
-
-
-
-
 
   /**
    * Returns the distance, in meters, between two LatLngs.
