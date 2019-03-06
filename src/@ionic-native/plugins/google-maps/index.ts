@@ -1015,19 +1015,14 @@ export class GoogleMaps extends IonicNativePlugin {
 
   /**
    * Creates a new GoogleMap instance
-   * @param element {string | HTMLElement} Element ID or reference to attach the map to
+   * @param element {HTMLElement} Element reference to attach the map to
    * @param options {GoogleMapOptions} [options] Options
    * @return {GoogleMap}
    */
-  static create(element: string | HTMLElement | GoogleMapOptions, options?: GoogleMapOptions): GoogleMap {
-    if (element instanceof HTMLElement) {
-      if (element.getAttribute('__pluginMapId')) {
-        console.error('GoogleMaps', element.tagName + '[__pluginMapId=\'' + element.getAttribute('__pluginMapId') + '\'] has already map.');
-        return;
-      }
-    } else if (typeof element === 'object') {
-      options = element as GoogleMapOptions;
-      element = null;
+  static create(element: HTMLElement, options?: GoogleMapOptions): GoogleMap {
+    if (element.getAttribute('__pluginMapId')) {
+      console.error('GoogleMaps', element.tagName + '[__pluginMapId=\'' + element.getAttribute('__pluginMapId') + '\'] has already map.');
+      return;
     }
     const googleMap: GoogleMap = new GoogleMap(element as HTMLElement, options);
     return googleMap;
