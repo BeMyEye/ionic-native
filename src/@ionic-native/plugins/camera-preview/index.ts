@@ -42,6 +42,9 @@ export interface CameraPreviewOptions {
   /** Tap to set specific focus point. Note, this assumes the camera is full-screen. default false */
   tapToFocus?: boolean;
 
+  /** Defaults to false - Capture images to a file and return back the file path instead of returning base64 encoded data. */
+  storeToFile?: boolean;
+
   /** On Android disable automatic rotation of the image and stripping of Exit header. default false */
   disableExifHeaderStripping?: boolean;
 }
